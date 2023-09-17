@@ -14,7 +14,10 @@ const fetchApi = async ({ query }: FetchParams) => {
     }),
   });
 
-  const data = await res.json();
+  const { data, errors } = await res.json();
+  if (errors) {
+    throw new Error(errors[0].message ?? errors.message);
+  }
   return { data };
 };
 
