@@ -1,21 +1,11 @@
-//fetching data using fetch method
-const fetchApi = async () => {
-  const url = "";
-  const res = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+import fetchApi from "../utils/fetch-api";
+import getAllProductsQuery from "../utils/queries/get-all-products";
 
-  const data = await res.json();
-  return { data };
-};
+//this function calls our api
+const getAllProducts = async (): Promise<any[]> => {
+  const products = await fetchApi({ query: getAllProductsQuery });
 
-const getAllProducts = async (): Promise<number[]> => {
-  const products = [1, 2, 3];
-
-  return products;
+  return products.data;
 };
 
 export default getAllProducts;

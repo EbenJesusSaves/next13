@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <>{products}</>;
+  return <>{JSON.stringify(products)}</>;
 }
 
 export async function getStaticProps() {
