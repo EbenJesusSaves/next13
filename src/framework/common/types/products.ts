@@ -3,7 +3,7 @@ export interface ProductImage {
   alt?: string;
 }
 
-export interface PRoduct {
+export interface Product {
   id: string;
   name: string;
   description: string;

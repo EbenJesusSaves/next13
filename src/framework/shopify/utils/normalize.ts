@@ -1,6 +1,7 @@
+import { Product } from "@/framework/common/types/products";
 import { ImageEdge, Product as ShopifyProducts } from "../schema";
 
-export function normalizeProducts(ProductNode: ShopifyProducts) {
+export function normalizeProducts(ProductNode: ShopifyProducts): Product {
   //normalizer gets the products from the node and returns what we need instead of all the products
 
   const {
