@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import type { InferGetStaticPropsType } from "next";
 import getAllProducts from "@/framework/shopify/products/get-all-products";
+import { getConfig } from "@/framework/shopify/api/config";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({
@@ -13,10 +14,13 @@ export default function Home({
 }
 
 export async function getStaticProps() {
+  const config = getConfig();
+  console.log(config.apiUrl);
+
   const products = await getAllProducts();
 
   return {
     props: { products },
-    revalidate: 4,
+    revalidate: 4 * 60,
   };
 }
