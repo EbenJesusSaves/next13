@@ -15,9 +15,8 @@ export default function Home({
 
 export async function getStaticProps() {
   const config = getConfig();
-  console.log(config.apiUrl);
 
-  const products = await getAllProducts();
+  const products = await getAllProducts(config);
 
   return {
     props: { products },
