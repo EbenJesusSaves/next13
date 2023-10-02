@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import type { InferGetStaticPropsType } from "next";
 import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
+import { Layout } from "@/components/common";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({
@@ -23,3 +24,5 @@ export async function getStaticProps() {
     revalidate: 4 * 60,
   };
 }
+
+Home.Layout = Layout;
