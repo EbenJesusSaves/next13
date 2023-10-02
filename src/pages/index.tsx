@@ -6,12 +6,19 @@ import type { InferGetStaticPropsType } from "next";
 import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
 import { Layout } from "@/components/common";
+import { ProductCard } from "@/components/products";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <>{JSON.stringify(products)}</>;
+  return (
+    <>
+      {products.slice(0, 3).map((products) => (
+        <ProductCard product={products} key={products.id} />
+      ))}
+    </>
+  );
 }
 
 export async function getStaticProps() {

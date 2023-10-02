@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import s from "./Layout.module.css";
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <>
-      <main className={s.root}>{children}</main>
-    </>
+    <div className={s.root}>
+      <main className="fit">{children}</main>
+    </div>
   );
 };
 
