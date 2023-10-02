@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '../statics/base.css';
+
+.fit {
+    min-height: calc(100vh - 80px);
+}
