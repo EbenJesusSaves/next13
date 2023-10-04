@@ -2,16 +2,18 @@ import { Product } from "@/framework/common/types/products";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-
+import s from "./ProductCard.module.css";
 interface Props {
   product: Product;
 }
 
 const ProductCard: FC<Props> = ({ product }) => {
   return (
-    <div>
+    <div className={s.productTag}>
       <Link href={`product.slug/${product.slug}`}>
-        <div></div>
+        <div className={s.productTag}>
+          <div>CIne abd</div>
+        </div>
         {product.images && (
           <Image
             width={540}
