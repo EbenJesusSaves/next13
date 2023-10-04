@@ -1,4 +1,6 @@
 import { Product } from "@/framework/common/types/products";
+import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
 
 interface Props {
@@ -6,7 +8,22 @@ interface Props {
 }
 
 const ProductCard: FC<Props> = ({ product }) => {
-  return <div>{product.name}</div>;
+  return (
+    <div>
+      <Link href={`product.slug/${product.slug}`}>
+        <div></div>
+        {product.images && (
+          <Image
+            width={540}
+            height={540}
+            layout="responsive"
+            alt={product.name ?? "product image"}
+            src={product.images[0].url}
+          />
+        )}
+      </Link>
+    </div>
+  );
 };
 
 export default ProductCard;
