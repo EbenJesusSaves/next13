@@ -9,9 +9,9 @@ interface Props {
 
 const ProductCard: FC<Props> = ({ product }) => {
   return (
-    <div className={s.productTag}>
+    <div>
       <Link href={`product.slug/${product.slug}`}>
-        <div className={s.productTag}>
+        <div>
           <div>CIne abd</div>
         </div>
         {product.images && (
