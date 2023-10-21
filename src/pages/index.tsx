@@ -20,7 +20,7 @@ export default function Home({
           <ProductCard product={products} key={products.id} />
         ))}
       </Grid>
-      <Hello headline="Come here" description="Just testing " />
+      <Hello headline="Come here" description="Just testing" />
     </>
   );
 }
