@@ -7,7 +7,7 @@ import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
 import { Layout } from "@/components/common";
 import { ProductCard } from "@/components/products";
-import { Grid } from "@/components/ui";
+import { Grid, Hello } from "@/components/ui";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({
@@ -20,6 +20,7 @@ export default function Home({
           <ProductCard product={products} key={products.id} />
         ))}
       </Grid>
+      <Hello headline="Come here" description="Just testing " />
     </>
   );
 }

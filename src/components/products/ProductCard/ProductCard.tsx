@@ -10,15 +10,19 @@ interface Props {
 const ProductCard: FC<Props> = ({ product }) => {
   return (
     <div className={s.root}>
+      <div className={s.productBg}></div>
       <Link href={`product.slug/${product.slug}`}>
         <div className={s.productTag}>
           <h3 className={s.productTitle}>
             <span>{product.name} </span>
           </h3>
-          <span className={s.productPrice}>Sandy Asare</span>
+          <span className={s.productPrice}>
+            {product.price.value} {product.price.currencyCode}
+          </span>
         </div>
         {product.images && (
           <Image
+            className={s.productImage}
             width={540}
             height={540}
             layout="responsive"
