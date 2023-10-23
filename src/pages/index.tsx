@@ -23,7 +23,7 @@ export default function Home({
       <Hello headline="Come here" description="Just testing" />
       <Marquee>
         {products.slice(0, 3).map((products) => (
-          <ProductCard product={products} key={products.id} />
+          <ProductCard variant="Slim" product={products} key={products.id} />
         ))}
       </Marquee>
     </>
