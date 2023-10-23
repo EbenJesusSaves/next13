@@ -3,7 +3,7 @@
 }
 
 .headline {
-    @apply text-4xl leading-10 font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl;
+    @apply flex-1 max-w-xl text-4xl leading-10 font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl;
 }
 
 .description {

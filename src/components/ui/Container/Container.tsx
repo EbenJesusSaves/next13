@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Container: FC<Props> = ({ children, el: Container = "div" }) => {
-  return <Container>{children}</Container>;
+  return <Container className="px-6 mx-auto ">{children}</Container>;
 };
 
 export default Container;
