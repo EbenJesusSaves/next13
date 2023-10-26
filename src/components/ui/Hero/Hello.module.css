@@ -1,5 +1,7 @@
 .root {
-    @apply flex flex-col py-32 md:flex-row;
+    @apply flex flex-col py-32 justify-center md:flex-row;
+
+
 }
 
 .headline {
@@ -11,5 +13,5 @@
 }
 
 .link {
-    @apply text-white pt-3 font-bold hover:underline cursor-pointer;
+    @apply block text-white pt-3 font-bold hover:underline cursor-pointer;
 }
