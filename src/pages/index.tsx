@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import type { InferGetStaticPropsType } from "next";
 import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
-import { Layout } from "@/components/common";
+import { Footer, Layout } from "@/components/common";
 import { ProductCard } from "@/components/products";
 import { Grid, Hero, Marquee } from "@/components/ui";
 const inter = Inter({ subsets: ["latin"] });
@@ -19,13 +19,24 @@ export default function Home({
         {products.slice(0, 3).map((products) => (
           <ProductCard product={products} key={products.id} />
         ))}
-      </Grid>{" "}
+      </Grid>
       <Hero headline="Come here" description="Just testing" />
       <Marquee>
         {products.slice(0, 3).map((products) => (
           <ProductCard variant="Slim" product={products} key={products.id} />
         ))}
       </Marquee>
+      <Grid layout="B">
+        {products.slice(0, 3).map((products) => (
+          <ProductCard product={products} key={products.id} />
+        ))}
+      </Grid>
+      <Marquee variant="secondary">
+        {products.slice(0, 3).map((products) => (
+          <ProductCard variant="Slim" product={products} key={products.id} />
+        ))}
+      </Marquee>
+      <Footer />
     </>
   );
 }
