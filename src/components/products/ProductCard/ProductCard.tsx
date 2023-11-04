@@ -13,6 +13,9 @@ const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
     <div className={s.root}>
       {variant === "Slim" ? (
         <div className="flex flex-col">
+          <div>
+            <span className="text-white p-3 font-bold">{product.name}</span>
+          </div>
           {product.images && (
             <Image
               className={s.productImage}
