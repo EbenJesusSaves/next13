@@ -12,7 +12,21 @@ const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
   return (
     <div className={s.root}>
       {variant === "Slim" ? (
-        <>this is slim</>
+        <div className="flex flex-col">
+          <div>
+            <span className="text-white p-3 font-bold">{product.name}</span>
+          </div>
+          {product.images && (
+            <Image
+              className={s.productImage}
+              width={320}
+              height={320}
+              layout="fixed"
+              alt={product.name ?? "product image"}
+              src={product.images[0].url}
+            />
+          )}
+        </div>
       ) : (
         <>
           <div className={s.productBg}></div>
