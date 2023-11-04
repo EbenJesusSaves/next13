@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import type { InferGetStaticPropsType } from "next";
 import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
-import { Footer, Layout } from "@/components/common";
+import { Layout } from "@/components/common";
 import { ProductCard } from "@/components/products";
 import { Grid, Hero, Marquee } from "@/components/ui";
 const inter = Inter({ subsets: ["latin"] });
@@ -36,7 +36,6 @@ export default function Home({
           <ProductCard variant="Slim" product={products} key={products.id} />
         ))}
       </Marquee>
-      <Footer />
     </>
   );
 }
@@ -51,5 +50,12 @@ export async function getStaticProps() {
     revalidate: 4 * 60,
   };
 }
+const Layout = (page: ReactNode) => {
+  return (
+    <PrivatePageLayout>
+      <AdminPageLayout>{page}</AdminPageLayout>
+    </PrivatePageLayout>
+  );
+};
 
 Home.Layout = Layout;
