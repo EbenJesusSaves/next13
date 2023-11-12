@@ -14,7 +14,7 @@ const Navbar: FC = () => {
           <Link href="/">
             <div className={s.logo}>NEXT_STORE</div>
           </Link>
-          <nav className="ml-6 flexv flex-1 flex-row space-x-6">
+          <nav className="ml-6 flex flex-1 flex-row space-x-6">
             <Link href="/">
               <div className={s.link}>All</div>
             </Link>
