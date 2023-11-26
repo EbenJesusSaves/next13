@@ -7,7 +7,8 @@ import getAllProducts from "@/framework/shopify/products/get-all-products";
 import { getConfig } from "@/framework/shopify/api/config";
 import { Footer, Layout, Navbar } from "@/components/common";
 import { ProductCard } from "@/components/products";
-import { Grid, Hero, Marquee } from "@/components/ui";
+import { Grid, Hero, Marquee, Sidebar } from "@/components/ui";
+import CartSidebar from "@/components/cart/CartSidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({
@@ -16,6 +17,10 @@ export default function Home({
   return (
     <>
       <Navbar />
+      <Sidebar>
+        <CartSidebar />
+      </Sidebar>
+
       <Grid>
         {products.slice(0, 3).map((products) => (
           <ProductCard product={products} key={products.id} />

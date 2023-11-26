@@ -7,8 +7,8 @@ import { FC, useEffect, useRef } from "react";
 
 interface Props {
   children: any;
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const Sidebar: FC<Props> = ({ children }) => {
