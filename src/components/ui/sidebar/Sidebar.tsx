@@ -11,7 +11,7 @@ interface Props {
   onClose?: () => void;
 }
 
-const Sidebar: FC<Props> = ({ children, isOpen }) => {
+const Sidebar: FC<Props> = ({ children, isOpen, onClose }) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   //   useEffect(() => {
@@ -34,7 +34,7 @@ const Sidebar: FC<Props> = ({ children, isOpen }) => {
         <div ref={ref} className="fixed inset-0 overflow-hidden h-full z-50">
           <div className="absolute inset-0 overflow-hidden">
             <div
-              //   onClick={onClose}
+              onClick={onClose}
               className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"
             />
             <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex sm:pl-16 outline-none">
