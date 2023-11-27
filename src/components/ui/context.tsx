@@ -4,22 +4,38 @@ interface UIProviderTypes {
   children: ReactNode;
 }
 
-const UIContext = createContext<{ [key: string]: any }>({
-  uiState: "defaultState",
+export interface StateValues {
+  isSidebarOpen: boolean;
+}
+export interface stateModifiers {
+  openSidebar: () => void;
+  closeSidebar: () => void;
+}
+
+const stateModifiers = {
+  openSidebar: () => {},
+  closeSidebar: () => {},
+};
+const initialState = { isSidebarOpen: false };
+
+type State = StateValues & stateModifiers;
+
+const UIContext = createContext<State>({
+  ...stateModifiers,
+  ...initialState,
 });
 
 const UIProvider = ({ children }: UIProviderTypes) => {
-  const [isSideBarOpen, setSidebarOpen] = useState(false);
-  const uiState = {
-    setSidebarOpen,
-    isSideBarOpen,
+  const openSidebar = () => {};
+  const closeSidebar = () => {};
+
+  const value = {
+    openSidebar,
+    closeSidebar,
+    isSidebarOpen: false,
   };
 
-  return (
-    <UIContext.Provider value={{ uiState: uiState }}>
-      {children}
-    </UIContext.Provider>
-  );
+  return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
 };
 
 export default UIProvider;

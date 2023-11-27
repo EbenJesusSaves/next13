@@ -6,12 +6,12 @@ import { Sidebar } from "@/components/ui";
 import CartSidebar from "@/components/cart/CartSidebar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const ui = useUI();
+  const { isSidebarOpen } = useUI();
 
   return (
     <div className={s.root}>
       <Navbar />
-      <Sidebar isOpen={ui.isSideBarOpen}>
+      <Sidebar isOpen={isSidebarOpen}>
         <CartSidebar />
       </Sidebar>
       <main className="fit">{children}</main>

@@ -15,12 +15,12 @@ const Usernav: FC = () => {
   //   data?.lineItems.reduce((count: number, item: LineItem) => {
   //     return count + item.quantity;
   //   }, 0) ?? 0;
-  const ui = useUI();
+  const { openSidebar } = useUI();
   return (
     <nav>
       <ul className={s.list}>
         <li className={s.item}>
-          <Cart onClick={ui.setSidebarOpen} />
+          <Cart onClick={openSidebar} />
           {/* {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>} */}
         </li>
         <li className={s.item}>
