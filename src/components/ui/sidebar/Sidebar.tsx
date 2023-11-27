@@ -11,7 +11,7 @@ interface Props {
   onClose?: () => void;
 }
 
-const Sidebar: FC<Props> = ({ children }) => {
+const Sidebar: FC<Props> = ({ children, isOpen }) => {
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   //   useEffect(() => {
@@ -28,7 +28,6 @@ const Sidebar: FC<Props> = ({ children }) => {
   //     };
   //   }, [isOpen]);
 
-  const isOpen = true;
   return (
     <>
       {isOpen ? (

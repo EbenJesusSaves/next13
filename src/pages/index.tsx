@@ -15,12 +15,7 @@ export default function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
-      <Navbar />
-      <Sidebar>
-        <CartSidebar />
-      </Sidebar>
-
+    <Layout>
       <Grid>
         {products.slice(0, 3).map((products) => (
           <ProductCard product={products} key={products.id} />
@@ -43,7 +38,7 @@ export default function Home({
         ))}
       </Marquee>
       <Footer />
-    </>
+    </Layout>
   );
 }
 
