@@ -40,8 +40,8 @@ const uiReducer = (state: StateValues, action: Action) => {
 const UIProvider = ({ children }: UIProviderTypes) => {
   const [state, dispatch] = useReducer(uiReducer, initialState);
   const { isSidebarOpen } = state;
-  const openSidebar = () => dispatch({ type: "OPEN_SIDEBAR" });
 
+  const openSidebar = () => dispatch({ type: "OPEN_SIDEBAR" });
   const closeSidebar = () => dispatch({ type: "CLOSE_SIDEBAR" });
 
   const value = {
