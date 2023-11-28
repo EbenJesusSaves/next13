@@ -30,7 +30,7 @@ const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
       ) : (
         <>
           <div className={s.productBg}></div>
-          <Link href={`product.slug/${product.slug}`}>
+          <Link href={`products/${product.slug}`}>
             <div className={s.productTag}>
               <h3 className={s.productTitle}>
                 <span>{product.name} </span>
