@@ -1,3 +1,4 @@
+import { Layout } from "@/components/common";
 import React from "react";
 
 const ProductSlug = () => {
@@ -5,3 +6,5 @@ const ProductSlug = () => {
 };
 
 export default ProductSlug;
+
+ProductSlug.Layout = Layout;
