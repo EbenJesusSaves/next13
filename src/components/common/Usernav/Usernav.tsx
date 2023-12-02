@@ -21,7 +21,7 @@ const Usernav: FC = () => {
       <ul className={s.list}>
         <li className={s.item}>
           <Cart onClick={openSidebar} />
-          {/* {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>} */}
+          {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}
         </li>
         <li className={s.item}>
           <Link href="/wishlist">

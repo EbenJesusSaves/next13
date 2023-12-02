@@ -18,7 +18,7 @@ export const getStaticProps = () => {};
 const ProductSlug = () => {
   return (
     <Layout>
-      <div>[slug] apnkye krakra asoro ne fum</div>
+      <div></div>
     </Layout>
   );
 };
