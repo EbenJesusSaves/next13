@@ -1,5 +1,9 @@
 import { Layout } from "@/components/common";
-import { GetServerSidePropsContext, GetStaticPaths } from "next";
+import {
+  GetServerSidePropsContext,
+  GetStaticPaths,
+  InferGetServerSidePropsType,
+} from "next";
 import React from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -15,14 +19,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async ({
   params,
-}: GetServerSidePropsContext<{ slug: string }>) => {};
+}: GetServerSidePropsContext<{ slug: string }>) => {
+  return {
+    props: {
+      product: {
+        slug: params?.slug,
+      },
+    },
+  };
+};
 
-const ProductSlug = () => {
-  return (
-    <Layout>
-      <div></div>
-    </Layout>
-  );
+const ProductSlug = ({
+  product,
+}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+  return <Layout>{product.slug}</Layout>;
 };
 
 export default ProductSlug;
