@@ -1,18 +1,19 @@
 import { Layout } from "@/components/common";
+import { getConfig } from "@/framework/shopify/api/config";
+import { getAllProductsPaths } from "@/framework/shopify/products/get-all-product-paths";
 import {
   GetServerSidePropsContext,
   GetStaticPaths,
   InferGetServerSidePropsType,
 } from "next";
+
 import React from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const config = getConfig();
+  const { products } = await getAllProductsPaths(config);
   return {
-    paths: [
-      { params: { slug: "cool-hat" } },
-      { params: { slug: "lightweight-jacket" } },
-      { params: { slug: "t-shirt" } },
-    ],
+    paths: products.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,
   };
 };

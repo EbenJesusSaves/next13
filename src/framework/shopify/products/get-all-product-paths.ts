@@ -5,7 +5,9 @@ type ReturnType = {
   products: Pick<Product, "slug">[];
 };
 
-const getAllProductsPaths = async (config: ApiConfig): Promise<ReturnType> => {
+export const getAllProductsPaths = async (
+  config: ApiConfig
+): Promise<ReturnType> => {
   return {
     products: [
       { slug: "cool-hat" },
