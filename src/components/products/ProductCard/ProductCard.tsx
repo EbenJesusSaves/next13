@@ -18,7 +18,7 @@ const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
           </div>
           {product.images && (
             <Image
-              className={s.productImage}
+              className={s?.productImage}
               width={320}
               height={320}
               layout="fixed"
