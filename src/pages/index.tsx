@@ -44,7 +44,6 @@ export default function Home({
 
 export async function getStaticProps() {
   const config = getConfig();
-
   const products = await getAllProducts(config);
 
   return {
