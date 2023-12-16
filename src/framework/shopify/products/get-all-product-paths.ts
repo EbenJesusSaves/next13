@@ -25,3 +25,5 @@ export const getAllProductsPaths = async (
     products,
   };
 };
+
+// will continue and finish soon
