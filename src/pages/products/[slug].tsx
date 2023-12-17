@@ -28,7 +28,7 @@ export const getStaticProps = async ({
   return {
     props: {
       product: {
-        slug: params?.slug,
+        product,
       },
     },
   };
@@ -37,7 +37,7 @@ export const getStaticProps = async ({
 const ProductSlug = ({
   product,
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
-  return <Layout>{product.slug}</Layout>;
+  return <Layout>{product.product}</Layout>;
 };
 
 export default ProductSlug;

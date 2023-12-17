@@ -7,6 +7,7 @@ export const getProducts = async (config: ApiConfig): Promise<any> => {
   return {
     product: {
       name: config.apiUrl,
+      slug: "Just testng ",
     },
   };
 };
