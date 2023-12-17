@@ -17,6 +17,8 @@ const configWrapper = new Config({
   fetch: fetchApi,
 });
 
+//this returns the config rapper
+//which helps returned fetch queries
 export function getConfig() {
   return configWrapper.getConfig();
 }

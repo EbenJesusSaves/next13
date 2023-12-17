@@ -6,7 +6,7 @@ export const getProducts = async (config: ApiConfig): Promise<any> => {
 
   return {
     product: {
-      name: "",
+      name: config.apiUrl,
     },
   };
 };
