@@ -1,7 +1,7 @@
 import { ApiConfig } from "@/framework/common/types/api";
 import React from "react";
 
-export const getProducts = async (config: ApiConfig): Promise<any> => {
+const getProducts = async (config: ApiConfig): Promise<any> => {
   console.log(config);
 
   return {
@@ -11,3 +11,5 @@ export const getProducts = async (config: ApiConfig): Promise<any> => {
     },
   };
 };
+
+export default getProducts;

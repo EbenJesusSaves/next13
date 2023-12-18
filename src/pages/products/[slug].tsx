@@ -1,7 +1,10 @@
 import { Layout } from "@/components/common";
 import { getConfig } from "@/framework/shopify/api/config";
-import { getAllProductsPaths } from "@/framework/shopify/products/get-all-product-paths";
-import { getProducts } from "@/framework/shopify/products/get-products";
+import {
+  getAllProductsPaths,
+  getAllProducts,
+  getProducts,
+} from "@/framework/shopify/products";
 import {
   GetServerSidePropsContext,
   GetStaticPaths,
@@ -27,9 +30,7 @@ export const getStaticProps = async ({
 
   return {
     props: {
-      product: {
-        product,
-      },
+      product,
     },
   };
 };
@@ -37,7 +38,7 @@ export const getStaticProps = async ({
 const ProductSlug = ({
   product,
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
-  return <Layout>{product.product}</Layout>;
+  return <Layout>{product.name}</Layout>;
 };
 
 export default ProductSlug;
