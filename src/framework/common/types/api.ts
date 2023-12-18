@@ -1,6 +1,7 @@
 export interface ApiFetcherOptions {
   url: string;
   query: string;
+  variables?: any;
 }
 
 export interface ApiFetcherResults<T> {

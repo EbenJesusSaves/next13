@@ -22,11 +22,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({
-  params,
-}: GetServerSidePropsContext<{ slug: string }>) => {
+export const getStaticProps = async ({ params }: GetServerSidePropsContext<{ slug: string }>) => {
+
   const config = getConfig();
-  const { product } = await getProducts(config);
+
+  const { product } = await getProducts({ config, variables: { slug: params?.slug }, });
 
   return {
     props: {
