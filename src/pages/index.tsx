@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 
 import type { InferGetStaticPropsType } from "next";
-import getAllProducts from "@/framework/shopify/products/get-all-products";
+import { getAllProducts } from "@/framework/shopify/products";
 import { getConfig } from "@/framework/shopify/api/config";
 import { Footer, Layout, Navbar } from "@/components/common";
 import { ProductCard } from "@/components/products";
