@@ -1,9 +1,10 @@
 export interface ApiFetcherOptions {
   url: string;
   query: string;
-  variables?: any;
+  variables?: Variables;
 }
 
+export type Variables = { [key: string]: string };
 export interface ApiFetcherResults<T> {
   data: T;
 }
