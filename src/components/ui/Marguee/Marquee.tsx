@@ -15,7 +15,7 @@ const Marquee = ({ children, variant = "primary" }: Props) => {
   return (
     <div className={rootClassName}>
       <Ticker offset={80}>
-        {() => <div className={s.container}>{children}</div>}
+        {() => <div className={s?.container}>{children}</div>}
       </Ticker>
     </div>
   );
