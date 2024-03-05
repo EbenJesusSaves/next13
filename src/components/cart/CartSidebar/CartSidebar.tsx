@@ -7,7 +7,7 @@ import { useUI } from "@/components/ui/context";
 const CartSidebar: FC = () => {
   const { closeSidebar } = useUI();
   //   const { data, isEmpty } = useCart();
-  const isEmpty = false;
+  const isEmpty = true;
   const rootClass = cn("h-full flex flex-col", {
     "bg-secondary text-secondary": isEmpty,
   });
