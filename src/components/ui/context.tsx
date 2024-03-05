@@ -13,8 +13,8 @@ export interface stateModifiers {
 }
 
 const stateModifiers = {
-  openSidebar: () => {},
-  closeSidebar: () => {},
+  openSidebar: () => { },
+  closeSidebar: () => { },
 };
 const initialState = { isSidebarOpen: false };
 
