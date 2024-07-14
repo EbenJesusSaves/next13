@@ -22,12 +22,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: GetServerSidePropsContext<{ slug: string }>) => {
-
+export const getStaticProps = async ({
+  params,
+}: GetServerSidePropsContext<{ slug: string }>) => {
   const config = getConfig();
 
-
-  const { product } = await getProducts({ config, variables: { slug: params!.slug }, });
+  const { product } = await getProducts({
+    config,
+    variables: { slug: params!.slug },
+  });
 
   return {
     props: {
@@ -39,7 +42,11 @@ export const getStaticProps = async ({ params }: GetServerSidePropsContext<{ slu
 const ProductSlug = ({
   product,
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
-  return <Layout>{product?.name} {product?.slug}</Layout>;
+  return (
+    <Layout>
+      {product?.name} {product?.slug}
+    </Layout>
+  );
 };
 
 export default ProductSlug;
